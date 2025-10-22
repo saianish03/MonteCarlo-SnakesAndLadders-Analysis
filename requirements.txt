@@ -2,5 +2,4 @@ plotly
 streamlit
 scipy
 numpy
-pprint
 matplotlib
