@@ -1,10 +1,8 @@
 import numpy as np
 import random
 from collections import defaultdict
-from pprint import pprint
 from functools import cache
 import matplotlib.pyplot as plt
-from tqdm import tqdm
 
 class SnakesAndLadders:
     
@@ -103,7 +101,7 @@ class SnakesAndLadders:
 
         prob_history = [] 
         
-        for game_num in tqdm(range(n_games)):
+        for game_num in range(n_games):
             rolls_needed, path = self.play_game()
 
             self.rolls_to_win.append(rolls_needed)
@@ -186,13 +184,3 @@ class SnakesAndLadders:
         print("Which snake is most frequently stepped on: ", max(self.snake_hits, key=self.snake_hits.get))
         print("Which ladder is most frequently stepped on: ", max(self.ladder_hits, key=self.ladder_hits.get))
         print()
-
-
-if __name__=="__main__":
-    sim = SnakesAndLadders()
-    sim.run_simulation(n_games=10000, stop_at_convergence=False)
-    sim.compute_stats()
-    plt.bar(sim.rolls_frequency.keys(), sim.rolls_frequency.values(), color = 'blue')
-    plt.xlabel('roll number')
-    plt.ylabel('freq')
-    plt.show()
