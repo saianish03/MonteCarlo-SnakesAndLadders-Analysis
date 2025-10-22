@@ -2,6 +2,5 @@ plotly
 streamlit
 scipy
 numpy
-tqdm
 pprint
 matplotlib
