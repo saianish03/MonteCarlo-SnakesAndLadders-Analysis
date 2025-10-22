@@ -53,8 +53,8 @@ st.markdown("---")
 st.header("Run Simulation")
 
 n_games = st.number_input("Number of games to simulate:", 
-                         min_value=100, max_value=100000, 
-                         value=10000, step=1000,
+                         min_value=500, max_value=1000000, 
+                         value=100000, step=1000,
                          help="More games = more accurate results but longer computation time")
 
 if st.button("Run Simulation", type="primary"):
